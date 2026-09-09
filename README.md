@@ -49,7 +49,7 @@ Attacks originated globally, with the top sources being:
 
 *(15+ countries represented in total)*
 
-![Attack Map](Screenshot_2026-09-09_114106.png)
+![Attack Map](Screenshot 2026-09-09 114106.png)
 
 ### 4. Credential Targeting Patterns
 - **53,806** attempts (roughly half of all traffic) targeted usernames derived from the VM's own hostname (`EAST1`, `CORP`) — indicating attackers actively fingerprinted the target rather than relying purely on generic wordlists
