@@ -49,7 +49,7 @@ Attacks originated globally, with the top sources being:
 
 *(15+ countries represented in total)*
 
-![Attack Map](Screenshot 2026-09-09 114106.png)
+![Attack Map] (Screenshot 2026-09-09 114106.png)
 
 
 ### 4. Outcome
