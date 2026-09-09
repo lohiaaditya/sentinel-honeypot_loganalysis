@@ -51,11 +51,8 @@ Attacks originated globally, with the top sources being:
 
 ![Attack Map](Screenshot 2026-09-09 114106.png)
 
-### 4. Credential Targeting Patterns
-- **53,806** attempts (roughly half of all traffic) targeted usernames derived from the VM's own hostname (`EAST1`, `CORP`) — indicating attackers actively fingerprinted the target rather than relying purely on generic wordlists
-- Remaining attempts targeted standard administrative account names: `ADMINISTRATOR` (9,259), `ADMIN` (5,442), `USER` (4,251), `SYSTEM` (3,528), and the Spanish-language variant `ADMINISTRADOR` (3,357) — consistent with the observed Spain-origin traffic
 
-### 5. Outcome
+### 4. Outcome
 - **Zero successful logons** were recorded from any of the 239 attacking IPs, despite over 108,000 combined attempts
 - The honeypot held up under sustained, real-world, automated attack
 
@@ -63,11 +60,7 @@ Attacks originated globally, with the top sources being:
 - Microsoft Azure (Virtual Machines, Networking)
 - Microsoft Sentinel (SIEM)
 - Log Analytics Workspace
-- KQL (Kusto Query Language)
-- Sentinel Watchlists (GeoIP enrichment)
-- Sentinel Workbooks (attack map visualization)
+- KQL
+- Sentinel Watchlists
+- Sentinel Workbooks
 
-## What I'd Do Next
-- Extend the analysis with a Logic App playbook to auto-block top attacking IPs in real time
-- Add Microsoft Defender for Endpoint to compare host-based detection against the SIEM-only view
-- Run the same experiment across multiple VM locations/regions to compare regional targeting differences
