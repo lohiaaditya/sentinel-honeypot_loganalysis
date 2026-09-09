@@ -1,6 +1,6 @@
 # Azure Honeypot — Attacker Behavior Analysis with Microsoft Sentinel
 
-A hands-on security project: I deployed an intentionally exposed Windows VM (a "honeypot") on Microsoft Azure, connected it to Microsoft Sentinel for centralized log analysis, let it absorb real, live attack traffic from the internet for 48 hours, then used KQL to analyze attacker behavior patterns at scale.
+A hands-on security project: I deployed an exposed Windows VM on Microsoft Azure, connected it to Microsoft Sentinel for centralized log analysis, let it absorb real, live attack traffic from the internet for 48 hours, then used KQL to analyze attacker behavior patterns at scale.
 
 ## Problem Statement
 
@@ -13,11 +13,11 @@ Internet-facing systems are scanned and attacked constantly, often within minute
 
 ## Methodology
 
-1. Deployed a Windows VM on Microsoft Azure with an intentionally permissive Network Security Group (all inbound traffic allowed) and the Windows Firewall disabled — turning it into a honeypot.
+1. Deployed a Windows VM on Microsoft Azure with an intentionally permissive Network Security Group and the Windows Firewall disabled — turning it into a honeypot.
 2. Connected the VM to a Log Analytics Workspace and Microsoft Sentinel via the Windows Security Events (AMA) connector.
-3. Let the VM sit exposed to live internet traffic for 48 hours, collecting Windows Security Event logs (including Event ID 4625 — failed logon, and 4624 — successful logon).
-4. Imported a GeoIP watchlist (~54,000 IP ranges) into Sentinel to enrich attacker IP addresses with geographic location data.
-5. Queried and analyzed the resulting dataset using KQL (Kusto Query Language).
+3. Let the VM sit exposed to live internet traffic for 48 hours, collecting Windows Security Event logs.
+4. Imported a GeoIP watchlist into Sentinel to enrich attacker IP addresses with geographic location data.
+5. Queried and analyzed the resulting dataset using KQL.
 6. Built a Sentinel Workbook to visualize attacker geography on a live attack map.
 
 ## Key Findings
@@ -49,7 +49,7 @@ Attacks originated globally, with the top sources being:
 
 *(15+ countries represented in total)*
 
-![Attack Map](attack_map.png)
+![Attack Map](Screenshot_2026-09-09_114106.png)
 
 ### 4. Credential Targeting Patterns
 - **53,806** attempts (roughly half of all traffic) targeted usernames derived from the VM's own hostname (`EAST1`, `CORP`) — indicating attackers actively fingerprinted the target rather than relying purely on generic wordlists
