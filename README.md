@@ -1,6 +1,6 @@
 # Azure Honeypot — Attacker Behavior Analysis with Microsoft Sentinel
 
-A hands-on security project: I deployed an exposed Windows VM on Microsoft Azure, connected it to Microsoft Sentinel for centralized log analysis, let it absorb real, live attack traffic from the internet for 48 hours, then used KQL to analyze attacker behavior patterns at scale.
+I deployed an exposed Windows VM on Microsoft Azure, connected it to Microsoft Sentinel for centralized log analysis, let it absorb real, live attack traffic from the internet for 48 hours, then used KQL to analyze attacker behavior patterns at scale.
 
 ## Problem Statement
 
@@ -13,7 +13,7 @@ Internet-facing systems are scanned and attacked constantly, often within minute
 
 ## Methodology
 
-1. Deployed a Windows VM on Microsoft Azure with an intentionally permissive Network Security Group and the Windows Firewall disabled — turning it into a honeypot.
+1. Deployed a Windows VM on Microsoft Azure with an intentionally permissive Network Security Group and the Windows Firewall disabled, turning it into a honeypot.
 2. Connected the VM to a Log Analytics Workspace and Microsoft Sentinel via the Windows Security Events (AMA) connector.
 3. Let the VM sit exposed to live internet traffic for 48 hours, collecting Windows Security Event logs.
 4. Imported a GeoIP watchlist into Sentinel to enrich attacker IP addresses with geographic location data.
@@ -49,8 +49,7 @@ Attacks originated globally, with the top sources being:
 
 *(15+ countries represented in total)*
 
-![Attack Map] (Screenshot 2026-09-09 114106.png)
-
+![Attack Map](Screenshot%202026-09-09%20114106.png)
 
 ### 4. Outcome
 - **Zero successful logons** were recorded from any of the 239 attacking IPs, despite over 108,000 combined attempts
